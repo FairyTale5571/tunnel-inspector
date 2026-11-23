@@ -58,6 +58,20 @@ Custom ports — proxy, app, UI, in that order:
 ./install.sh 4010 3000 4041
 ```
 
+### Without cloning: `go install`
+
+```bash
+go install github.com/FairyTale5571/tunnel-inspector@latest
+```
+
+That works out of the box — one `main` package, no dependencies — and drops the
+binary in `$(go env GOPATH)/bin`. What you get this way is the **binary only, no
+service**: good for trying it out or for running it by hand (see below), but
+nothing starts it at login. The LaunchAgent is installed by `install.sh`, which
+only exists in a clone. If you want the binary from `go install` *and* the
+service, clone the repo too and point the generated plist at it — or just use
+`install.sh`, which builds the same binary anyway.
+
 ### The one thing you have to do by hand
 
 Point your tunnel at the inspector instead of at your app. In **Cloudflare Zero
