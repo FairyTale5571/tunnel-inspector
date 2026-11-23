@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Label</key>
+	<string>__LABEL__</string>
+
+	<key>ProgramArguments</key>
+	<array>
+		<string>__BINARY__</string>
+		<string>-listen</string>
+		<string>__LISTEN__</string>
+		<string>-upstream</string>
+		<string>__UPSTREAM__</string>
+		<string>-ui</string>
+		<string>__UI__</string>
+	</array>
+
+	<key>RunAtLoad</key>
+	<true/>
+
+	<key>KeepAlive</key>
+	<true/>
+
+	<key>ThrottleInterval</key>
+	<integer>10</integer>
+
+	<key>WorkingDirectory</key>
+	<string>__WORKDIR__</string>
+
+	<key>EnvironmentVariables</key>
+	<dict>
+		<key>HOME</key>
+		<string>__HOME__</string>
+		<key>GOMEMLIMIT</key>
+		<string>64MiB</string>
+		<key>GOGC</key>
+		<string>40</string>
+	</dict>
+
+	<key>StandardOutPath</key>
+	<string>/tmp/tunnel-inspector.out</string>
+	<key>StandardErrorPath</key>
+	<string>/tmp/tunnel-inspector.err</string>
+
+	<key>ProcessType</key>
+	<string>Background</string>
+</dict>
+</plist>

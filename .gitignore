@@ -1,0 +1,7 @@
+# собранный бинарник
+/tunnel-inspector
+
+# сгенерированный из шаблона LaunchAgent (содержит локальные пути)
+/launchagent.plist
+
+.DS_Store
